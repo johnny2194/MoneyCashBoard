@@ -22,7 +22,7 @@ class Transaction
     @id = transaction_data.first()['id'].to_i
   end
 
-  def Transactions.all()
+  def Transaction.all()
     sql = "SELECT * FROM transactions;"
     transactions = SqlRunner.run( sql )
     result = transactions.map { |transaction| Transaction.new( transaction ) }
