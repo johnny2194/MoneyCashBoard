@@ -22,5 +22,14 @@
     <td><a href="/transactions/<%= transaction.id %>">View</a> </td>
   </tr>
     <% end %> 
-    </table>
+  <tr> 
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class='Bold RightTextAlign'>Total: </td>
+    <td class='Bold'>£<%= sprintf('%.2f', @total_amount) %></td>
+    <td></td>
+    </tr>
+  </table>
 </div>

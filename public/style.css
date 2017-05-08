@@ -19,18 +19,38 @@ table {
   }
 
 /* Table Zebra Striping*/
-  tr:nth-of-type(odd) { 
+tr:nth-of-type(odd) { 
     background: #F3F3F3; 
   }
-  th { 
+
+th { 
     background: #2A314B; 
     color: white; 
     font-weight: bold; 
   }
-  td, th { 
+
+td, th { 
     padding: 8px; 
     border: 1px solid #D1D1D1; 
     text-align: center; 
   }
 
-  }
+.Bold {
+  font-weight: bold; 
+}
+  
+.RightTextAlign {
+  text-align: right; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
