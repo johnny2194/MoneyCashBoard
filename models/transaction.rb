@@ -21,4 +21,11 @@ class Transaction
     transaction_data = SqlRunner.run(sql)
     @id = transaction_data.first()['id'].to_i
   end
+
+  def Transactions.all()
+    sql = "SELECT * FROM transactions;"
+    transactions = SqlRunner.run( sql )
+    result = transactions.map { |transaction| Transaction.new( transaction ) }
+    return result
+  end
 end 
