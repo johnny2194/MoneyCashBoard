@@ -1,6 +1,31 @@
 require('pry-byebug')
 require_relative('../models/transaction.rb')
 
+category1 = Category.new({
+  "name" => "Housing"
+  })
+category2 = Category.new({
+  "name" => "Savings"
+  })
+category3 = Category.new({
+  "name" => "Utilities"
+  })
+category4 = Category.new({
+  "name" => "Health Care"
+  })
+category5 = Category.new({
+  "name" => "Bills and Loans"
+  })
+category6 = Category.new({
+  "name" => "Food and Groceries"
+  })
+category7 = Category.new({
+  "name" => "Personal Care"
+  })
+category8 = Category.new({
+  "name" => "Entertainment"
+  })
+
 
 transaction1 = Transaction.new({
   "bank_name" => "Tesco Bank",
