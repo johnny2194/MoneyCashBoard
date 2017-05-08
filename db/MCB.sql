@@ -1,4 +1,11 @@
 DROP TABLE transactions;
+DROP TABLE categories;
+
+
+CREATE TABLE categories (
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255),
+);
 
 CREATE TABLE transactions (
   id SERIAL4 PRIMARY KEY,
