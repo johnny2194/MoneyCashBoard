@@ -1,13 +1,25 @@
 <p>All Transactions </p>
 
+<table>
+  <tr>
+    <th>Bank</th>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Category</th>
+    <th>Amount</th>
+    <th></th>
+  </tr>
+
 <% @transactions.each() do |transaction| %>
-  
-<p>Bank:  <%= transaction.bank_name %></p>
-<p>Date: <%= transaction.transaction_date%></p>
-<p>Description: <%= transaction.description%></p>
-<p>Type: <%= transaction.type%></p>
-<p>Category: <%= transaction.category%></p>
-<p>Amount: <%= transaction.amount %></p>
-<p><a href="/transactions/<%= transaction.id %>">View</a> </p>
-<hr/>
+<tr> 
+  <td><%= transaction.bank_name %></td>
+  <td><%= transaction.transaction_date%></td>
+  <td><%= transaction.description%></td>
+  <td><%= transaction.type%></td>
+  <td><%= transaction.category%></td>
+  <td><%= transaction.amount %></td>
+  <td><a href="/transactions/<%= transaction.id %>">View</a> </td>
+</tr>
   <% end %> 
+  </table>
