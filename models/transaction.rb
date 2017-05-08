@@ -33,7 +33,15 @@ class Transaction
     sql = "SELECT * FROM transactions WHERE id=#{id};"
     transaction = SqlRunner.run( sql )
     result = Transaction.new( transaction.first )
-
     return result
+  end 
+
+
+  def Transaction.total_amount()
+      sql = "SELECT SUM (amount) FROM transactions;"
+      total_amount_hash = SqlRunner.run( sql )
+      return total_amount_hash[0]['sum'].to_f
   end
+  
+
 end 

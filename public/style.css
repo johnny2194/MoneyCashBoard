@@ -1,22 +1,18 @@
 * { 
-  margin: 0; 
-  padding: 0; 
+  margin: 10px; 
+  padding: 0px;
+  background: ;
 }
 body { 
-  font: 14px/1.4 Georgia, Serif; 
+  font: 13px/1.4  Helvetica, Serif; 
 }
-#page-wrap {
-  margin: 50px;
-  text-align: center;
-}
-
 
 p {
   margin: 20px 0; 
 }
 
 table { 
-  width: 97%; 
+  width: 100%; 
   border-collapse: collapse; 
   margin-left: auto;
   margin-right: auto;
@@ -24,16 +20,16 @@ table {
 
 /* Table Zebra Striping*/
   tr:nth-of-type(odd) { 
-    background: #eee; 
+    background: #F3F3F3; 
   }
   th { 
-    background: #333; 
+    background: #2A314B; 
     color: white; 
     font-weight: bold; 
   }
   td, th { 
     padding: 8px; 
-    border: 1px solid #ccc; 
+    border: 1px solid #D1D1D1; 
     text-align: center; 
   }
 
