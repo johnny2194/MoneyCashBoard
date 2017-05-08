@@ -1,25 +1,26 @@
 <p>All Transactions </p>
+<div class='CenterAlignText'>
+  <table>
+    <tr>
+      <th>Bank</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th></th>
+    </tr>
 
-<table>
-  <tr>
-    <th>Bank</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Category</th>
-    <th>Amount</th>
-    <th></th>
+  <% @transactions.each() do |transaction| %>
+  <tr> 
+    <td><%= transaction.bank_name %></td>
+    <td><%= transaction.transaction_date%></td>
+    <td><%= transaction.description%></td>
+    <td><%= transaction.type%></td>
+    <td><%= transaction.category%></td>
+    <td>£<%= sprintf('%.2f', transaction.amount) %></td>
+    <td><a href="/transactions/<%= transaction.id %>">View</a> </td>
   </tr>
-
-<% @transactions.each() do |transaction| %>
-<tr> 
-  <td><%= transaction.bank_name %></td>
-  <td><%= transaction.transaction_date%></td>
-  <td><%= transaction.description%></td>
-  <td><%= transaction.type%></td>
-  <td><%= transaction.category%></td>
-  <td>£<%= sprintf('%.2f', transaction.amount) %></td>
-  <td><a href="/transactions/<%= transaction.id %>">View</a> </td>
-</tr>
-  <% end %> 
-  </table>
+    <% end %> 
+    </table>
+</div>
