@@ -1,5 +1,6 @@
 require('pry-byebug')
 require_relative('../models/transaction.rb')
+require_relative('../models/category.rb')
 
 category1 = Category.new({
   "name" => "Housing"
@@ -25,6 +26,15 @@ category7 = Category.new({
 category8 = Category.new({
   "name" => "Entertainment"
   })
+
+category1.save
+category2.save
+category3.save
+category4.save
+category5.save
+category6.save
+category7.save
+category8.save
 
 
 transaction1 = Transaction.new({

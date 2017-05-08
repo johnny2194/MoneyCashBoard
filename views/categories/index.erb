@@ -1,8 +1,9 @@
-<p>All Categories </p>
 <div class='CenterAlignText'>
+<p>All Categories</p>
  
-  <% @Categories.each() do |category| %>
-  <p>Cat: <%= category.name %></p>
-  <%= end %>
+  <% @categories.each() do |category| %>
+    <p>Cat: <%= category.name %></p>
+  <% end %>
+  <hr/>
 </div>
 

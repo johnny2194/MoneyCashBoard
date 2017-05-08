@@ -11,7 +11,7 @@ class Category
   end
 
   def save()
-    sql = "INSERT INTO categories ( name, logo_url ) VALUES ('#{ @name }') 
+    sql = "INSERT INTO categories ( name ) VALUES ('#{ @name }') 
     RETURNING *;"
     categories_data = SqlRunner.run(sql)
     @id = categories_data.first()['id'].to_i

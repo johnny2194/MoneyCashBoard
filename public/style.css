@@ -1,7 +1,7 @@
-* { 
+html { 
   margin: 10px; 
   padding: 0px;
-  background: ;
+  background-color: #EFFBFB;
 }
 body { 
   font: 13px/1.4  Helvetica, Serif; 
@@ -20,8 +20,12 @@ table {
 
 /* Table Zebra Striping*/
 tr:nth-of-type(odd) { 
-    background: #F3F3F3; 
+  background: #F3F3F3; 
   }
+
+tr:nth-of-type(even) { 
+  background: #FFFFFF; 
+  }  
 
 th { 
     background: #2A314B; 
