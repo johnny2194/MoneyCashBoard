@@ -13,7 +13,12 @@ class Transaction
     @type = options['type']
     @category = options['category']
     @amount = options['amount']
-
   end
 
+  def save()
+    sql = "INSERT INTO transactions (bank_name, transaction_date, description, type, category, amount) VALUES ('#{ @bank_name }','#{ @transaction_date }', '#{ @description }', '#{ @type }', '#{ @category }', #{ @amount }) 
+    RETURNING *;"
+    transaction_data = SqlRunner.run(sql)
+    @id = transaction_data.first()['id'].to_i
+  end
 end 
