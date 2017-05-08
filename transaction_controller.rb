@@ -18,3 +18,4 @@ get '/transactions/:id' do
   @transaction = Transaction.find(params[:id])
   erb(:'transactions/show')
 end  
+

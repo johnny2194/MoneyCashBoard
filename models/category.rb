@@ -24,4 +24,10 @@ class Category
     return result
   end
 
+  def Category.all()
+    sql = "SELECT * FROM categories;"
+    categories = SqlRunner.run( sql )
+    result = categories.map { |category| Category.new( category ) }
+    return result
+  end
 end
