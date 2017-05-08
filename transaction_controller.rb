@@ -19,3 +19,8 @@ get '/transactions/:id' do
   erb(:'transactions/show')
 end  
 
+# INDEX - READ  
+get '/categories' do 
+  @categories = Transaction.all()
+  erb(:'categories/index')
+end 
