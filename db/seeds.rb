@@ -17,7 +17,7 @@ transaction2 = Transaction.new({
   "description" => "Cineworld",
   "type" => "Personal",
   "category" => "Entertainment",
-  "amount" => 8.30
+  "amount" => 8.33
 })
 
 transaction3 = Transaction.new({
