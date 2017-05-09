@@ -43,6 +43,12 @@ class Category
     return transaction_objects
   end
 
+  def total_sum_by_category()
+    sql = "SELECT SUM (amount) FROM transactions
+    WHERE category_id = #{@id};"
+    total_amount_hash = SqlRunner.run( sql )
+    return total_amount_hash[0]['sum'].to_f
+  end 
 
 end
 
