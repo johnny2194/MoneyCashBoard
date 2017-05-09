@@ -31,12 +31,18 @@ class Category
     return result
   end
 
-  # def category()
-  #   sql = "SELECT * FROM categories 
-  #   WHERE id = #{@category_id}"
-  #   category = SqlRunner.run(sql)
-  #   result = Category.new( category.first )
-  #   return result
-  # end
+  def transactions()
+    sql = "
+    SELECT * FROM transactions
+    WHERE category_id = #{@id};"
+
+    transaction_hashes = SqlRunner.run(sql)
+    transaction_objects = transaction_hashes.map do |transaction_hash|
+      Transaction.new(transaction_hash)
+    end
+    return transaction_objects
+  end
+
+
 end
 
