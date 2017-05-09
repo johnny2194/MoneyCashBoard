@@ -1,0 +1,29 @@
+<form action="/transactions" method="POST">
+
+  <label for="bank-name-field">Select Bank:</label>
+  <input id="bank-name-field" type="text" name="bank_name"/>
+
+  <label for="transaction-date-fields">DD/MM/YYYY:</label>
+  <input id="transaction-date-fields" type="text" name="transaction_date">
+
+  <label for="description-fields">Description:</label>
+  <input id="description-fields" type="text" name="description">
+
+  <label for="description-fields">Select Type:</label>
+  <input id="description-fields" type="text" name="type">
+
+  <label for="category-select">Select Your Category:</label>
+  <select id="category-select" name="category_id">
+    <% for category in @categories do%>
+    <option value="<%=category.id%>" ><%=category.name%></option> 
+    <%end%>
+  </select>
+
+  <label for="amount">Amount</label>
+  <input id="amount" type="number" step="any" name="amount">
+
+  <input type="submit" value="Add transaction">
+
+</form>
+
+

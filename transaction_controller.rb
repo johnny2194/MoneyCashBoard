@@ -13,6 +13,12 @@ get '/transactions' do
   erb(:'transactions/index')
 end 
 
+# NEW - CREATE  
+get '/transactions/new' do
+  @categories= Category.all()
+  erb(:'transactions/new')
+end 
+
 #  SHOW - READ
 
 get '/transactions/:id' do 
@@ -24,10 +30,4 @@ end
 get '/categories' do 
   @categories = Category.all()
   erb(:'categories/index')
-end 
-
-# NEW - CREATE  
-get '/transactions/new' do
-  @transactions = Transaction.all()
-  erb(:new)
 end 
