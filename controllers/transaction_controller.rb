@@ -29,6 +29,13 @@ post '/transactions' do
   redirect '/transactions'
 end
 
+post '/transactions/filter' do
+  @category = Category.find(params['category_id'])
+  @transactions = @category.transactions()
+  @total_amount = @category.total_sum_by_category()
+  erb(:'categories/show')
+end 
+
 #  SHOW - READ
 
 get '/transactions/:id' do 
@@ -36,8 +43,4 @@ get '/transactions/:id' do
   erb(:'transactions/show')
 end  
 
-# INDEX - READ  
-get '/categories' do 
-  @categories = Category.all()
-  erb(:'categories/index')
-end 
+

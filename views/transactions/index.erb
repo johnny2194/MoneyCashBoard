@@ -18,7 +18,7 @@
       <td></td>
       <td></td>
       <td>
-        <form action="/category/filter" method="GET">  
+        <form action="/transactions/filter" method="POST">  
           <select id="category-select" name="category_id">
             <% for category in @categories do%>
             <option value="<%=category.id%>" ><%=category.name%></option> 
