@@ -1,0 +1,50 @@
+<form action="/transactions/<%= @transaction.id %>" method="POST">
+  <table>
+    <tr>
+      <th>Select Bank</th>
+      <th>Date (DD/MON/YY)</th>
+      <th>Description</th>
+      <th>Select Type</th>
+      <th>Select Category</th>
+      <th>Give Amount</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>
+        <label for="bank-name-field"></label>
+        <input id="bank-name-field" type="text" name="bank_name"/>
+      </td>
+
+      <td>
+        <label for="transaction-date-fields"></label>
+        <input id="transaction-date-fields" type="text" name="transaction_date">
+      </td>
+      <td>
+        <label for="description-fields"></label>
+        <input id="description-fields" type="text" name="description">
+      </td>
+
+      <td>
+        <label for="description-fields"></label>
+        <input id="description-fields" type="text" name="type">
+      </td>
+
+      <td>
+        <label for="category-select"></label>
+        <select id="category-select" name="category_id">
+          <% for category in @categories do%>
+          <option value="<%=category.id%>" ><%=category.name%></option> 
+          <%end%>
+        </select>
+      </td>
+
+      <td>
+        <label for="amount"></label>
+        <input id="amount" type="number" step="any" name="amount">
+      </tr>
+
+      <td> 
+        <input class="btn" type="submit" value="UPDATE">
+      </td>
+
+</form>
