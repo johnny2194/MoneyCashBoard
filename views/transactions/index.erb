@@ -1,6 +1,7 @@
 <div class='CenterAlignText'>
 <p>All Transactions </p>
   <table>
+
     <tr>
       <th>Bank</th>
       <th>Date</th>
@@ -10,6 +11,24 @@
       <th>Amount</th>
       <th></th>
     </tr>
+
+    <tr> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <form action="/category/filter" method="GET">  
+          <select id="category-select" name="category_id">
+            <% for category in @categories do%>
+            <option value="<%=category.id%>" ><%=category.name%></option> 
+            <%end%>
+          </select>
+        </form>
+      </td>
+      <td></td>
+      <td></td>
+      </tr>
 
   <% @transactions.each() do |transaction| %>
   <tr> 

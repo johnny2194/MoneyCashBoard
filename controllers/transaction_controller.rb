@@ -10,6 +10,7 @@ require_relative('../models/category.rb')
 get '/transactions' do 
   @transactions = Transaction.all()
   @total_amount = Transaction.total_amount()
+  @categories= Category.all()
   erb(:'transactions/index')
 end 
 
