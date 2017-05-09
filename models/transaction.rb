@@ -51,5 +51,15 @@ class Transaction
     return result
   end
   
-
+  def update()
+    sql = "UPDATE transactions SET
+  bank_name = '#{ @bank_name }',
+  transaction_date = '#{@transaction_date}',
+  description = '#{@description}',
+  type = '#{@type}',
+  category_id = '#{@category_id}',
+  amount = #{@amount}
+          WHERE id = '#{ @id }';"
+    SqlRunner.run( sql )
+  end
 end 

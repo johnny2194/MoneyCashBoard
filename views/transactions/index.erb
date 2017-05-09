@@ -13,10 +13,24 @@
     </tr>
 
     <tr> 
+      <td><form action="/transactions/filter" method="POST">  
+          <select id="category-select" name="category_id">
+            <% for category in @categories do%>
+            <option value="<%=category.id%>" ><%=category.name%></option> 
+            <%end%>
+          </select>
+          <input class="btn" type="submit" value="GO">
+        </form></td>
       <td></td>
       <td></td>
-      <td></td>
-      <td></td>
+      <td><form action="/transactions/filter" method="POST">  
+          <select id="category-select" name="category_id">
+            <% for category in @categories do%>
+            <option value="<%=category.id%>" ><%=category.name%></option> 
+            <%end%>
+          </select>
+          <input class="btn" type="submit" value="GO">
+        </form></td>
       <td>
         <form action="/transactions/filter" method="POST">  
           <select id="category-select" name="category_id">

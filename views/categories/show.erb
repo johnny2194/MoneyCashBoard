@@ -1,38 +1,58 @@
 <div class='CenterAlignText'>
 <p><%= @category.name %></p>
-  <table>
-    <tr>
-      <th>Bank</th>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Type</th>
-      <th><a href="http://localhost:4567/categories">Category</th>
-      <th>Amount</th>
-      <th></th>
-    </tr>
+    <table>
 
-  <% @transactions.each() do |transaction| %>
-  <tr> 
-    <td><%= transaction.bank_name %></td>
-    <td><%= transaction.transaction_date%></td>
-    <td><%= transaction.description%></td>
-    <td><%= transaction.type%></td>
-    <td><%= transaction.category.name%></td>
-    <td>£<%= sprintf('%.2f', transaction.amount) %></td>
-    <td class="cell-no-padding"><a href="/transactions/<%= transaction.id %>" class="btn">VIEW</a> </td>
-  </tr>
-    <% end %> 
-  <tr> 
-    <td><p></p> </td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td class='Bold RightTextAlign'>Total: </td>
-    <td class='Bold'>£<%= sprintf('%.2f', @total_amount) %></td>
-    <td></td>
+      <tr>
+        <th>Bank</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th><a href="http://localhost:4567/categories">Category</th>
+        <th>Amount</th>
+        <th></th>
+      </tr>
+
+      <tr> 
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <form action="/transactions/filter" method="POST">  
+            <select id="category-select" name="category_id">
+              <% for category in @categories do%>
+              <option value="<%=category.id%>" ><%=category.name%></option> 
+              <%end%>
+            </select>
+            <input class="btn" type="submit" value="GO">
+          </form>
+        </td>
+        <td></td>
+        <td></td>
+        </tr>
+
+    <% @transactions.each() do |transaction| %>
+    <tr> 
+      <td><%= transaction.bank_name %></td>
+      <td><%= transaction.transaction_date%></td>
+      <td><%= transaction.description%></td>
+      <td><%= transaction.type%></td>
+      <td><%= transaction.category.name%></td>
+      <td>£<%= sprintf('%.2f', transaction.amount) %></td>
+      <td class="cell-no-padding"><a href="/transactions/<%= transaction.id %>" class="btn">VIEW</a> </td>
     </tr>
-  </table>
-  <p><a href="/transactions/new" class="btn transaction">ADD NEW TRANSACTION</a></p> 
-</div>
+      <% end %> 
+    <tr> 
+      <td><p></p> </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class='Bold RightTextAlign'>Total: </td>
+      <td class='Bold'>£<%= sprintf('%.2f', @total_amount) %></td>
+      <td></td>
+      </tr>
+    </table>
+    <p><a href="/transactions/new" class="btn transaction">ADD NEW TRANSACTION</a></p> 
+  </div>
 
 

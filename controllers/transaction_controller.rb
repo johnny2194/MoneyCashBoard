@@ -30,6 +30,7 @@ post '/transactions' do
 end
 
 post '/transactions/filter' do
+  @categories= Category.all()
   @category = Category.find(params['category_id'])
   @transactions = @category.transactions()
   @total_amount = @category.total_sum_by_category()
