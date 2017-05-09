@@ -25,3 +25,9 @@ get '/categories' do
   @categories = Category.all()
   erb(:'categories/index')
 end 
+
+# NEW - CREATE  
+get '/transactions/new' do
+  @transactions = Transaction.all()
+  erb(:new)
+end 
