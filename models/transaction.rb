@@ -2,8 +2,8 @@ require_relative('../db/sql_runner')
 
 class Transaction
 
-  attr_reader :id
-  attr_accessor :bank_name, :transaction_date, :description, :type, :category, :amount
+  attr_reader :id, :category_id
+  attr_accessor :bank_name, :transaction_date, :description, :type,  :amount
 
   def initialize( options )
     @id = options['id'].to_i
@@ -11,12 +11,12 @@ class Transaction
     @transaction_date = options['transaction_date']
     @description = options['description']
     @type = options['type']
-    @category = options['category']
+    @category_id = options['category_id'].to_i
     @amount = options['amount']
   end
 
   def save()
-    sql = "INSERT INTO transactions (bank_name, transaction_date, description, type, category, amount) VALUES ('#{ @bank_name }','#{ @transaction_date }', '#{ @description }', '#{ @type }', '#{ @category }', #{ @amount }) 
+    sql = "INSERT INTO transactions (bank_name, transaction_date, description, type, category_id, amount) VALUES ('#{ @bank_name }','#{ @transaction_date }', '#{ @description }', '#{ @type }', #{ @category_id }, #{ @amount }) 
     RETURNING *;"
     transaction_data = SqlRunner.run(sql)
     @id = transaction_data.first()['id'].to_i

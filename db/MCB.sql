@@ -13,10 +13,7 @@ CREATE TABLE transactions (
   transaction_date DATE,
   description VARCHAR(255),
   type VARCHAR(255),
-  category VARCHAR(255),
+  category_id INT4 REFERENCES categories(id) ON DELETE CASCADE,
   amount FLOAT
 );
-
-
-
 

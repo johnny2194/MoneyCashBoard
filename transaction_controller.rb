@@ -19,6 +19,13 @@ get '/transactions/new' do
   erb(:'transactions/new')
 end 
 
+#CREATE - CREATE
+post '/transactions' do
+  @transactions = Transaction.new(params)
+  @transactions.save()
+  redirect '/transactions'
+end
+
 #  SHOW - READ
 
 get '/transactions/:id' do 

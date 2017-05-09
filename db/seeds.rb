@@ -26,6 +26,9 @@ category7 = Category.new({
 category8 = Category.new({
   "name" => "Entertainment"
   })
+category9 = Category.new({
+  "name" => "Investments"
+  })
 
 category1.save
 category2.save
@@ -35,6 +38,7 @@ category5.save
 category6.save
 category7.save
 category8.save
+category9.save
 
 
 transaction1 = Transaction.new({
@@ -42,7 +46,7 @@ transaction1 = Transaction.new({
   "transaction_date" => "05-MAY-17",
   "description" => "Waitrose",
   "type" => "Personal",
-  "category" => "Food & Groceries",
+  "category_id" => category6.id,
   "amount" => 54.40
 })
 
@@ -51,7 +55,7 @@ transaction2 = Transaction.new({
   "transaction_date" => "06-MAY-17",
   "description" => "Cineworld",
   "type" => "Personal",
-  "category" => "Entertainment",
+  "category_id" => category8.id,
   "amount" => 8.33
 })
 
@@ -60,7 +64,7 @@ transaction3 = Transaction.new({
   "transaction_date" => "06-MAY-17",
   "description" => "Ethereum",
   "type" => "Personal",
-  "category" => "Investments",
+  "category_id" => category9.id,
   "amount" => 258.60
 })
 
@@ -69,7 +73,7 @@ transaction4 = Transaction.new({
   "transaction_date" => "07-MAY-17",
   "description" => "Caffiene Drip",
   "type" => "Personal",
-  "category" => "Food & Groceries",
+  "category_id" => category6.id,
   "amount" => 23.50
 })
 
