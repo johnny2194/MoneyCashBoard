@@ -1,0 +1,38 @@
+<div class='CenterAlignText'>
+<p>All Transactions </p>
+  <table>
+    <tr>
+      <th>Bank</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th><a href="http://localhost:4567/categories">Category</th>
+      <th>Amount</th>
+      <th></th>
+    </tr>
+
+  <% @transactions.each() do |transaction| %>
+  <tr> 
+    <td><%= transaction.bank_name %></td>
+    <td><%= transaction.transaction_date%></td>
+    <td><%= transaction.description%></td>
+    <td><%= transaction.type%></td>
+    <td><%= transaction.category.name%></td>
+    <td>£<%= sprintf('%.2f', transaction.amount) %></td>
+    <td class="cell-no-padding"><a href="/transactions/<%= transaction.id %>" class="btn">VIEW</a> </td>
+  </tr>
+    <% end %> 
+  <tr> 
+    <td><p></p> </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class='Bold RightTextAlign'>Total: </td>
+    <td class='Bold'>£<%= sprintf('%.2f', @total_amount) %></td>
+    <td></td>
+    </tr>
+  </table>
+  <p><a href="/transactions/new" class="btn transaction">ADD NEW TRANSACTION</a></p> 
+</div>
+
+

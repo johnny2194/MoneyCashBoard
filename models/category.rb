@@ -30,4 +30,13 @@ class Category
     result = categories.map { |category| Category.new( category ) }
     return result
   end
+
+  # def category()
+  #   sql = "SELECT * FROM categories 
+  #   WHERE id = #{@category_id}"
+  #   category = SqlRunner.run(sql)
+  #   result = Category.new( category.first )
+  #   return result
+  # end
 end
+
