@@ -20,6 +20,14 @@ p {
   margin: 20px 0; 
 }
 
+.cell-no-padding {
+   
+}
+.cell-no-padding p {
+  margin: 0px 0;
+}
+
+
 table { 
   width: 98%; 
   border-collapse: collapse; 
@@ -80,6 +88,16 @@ td, th {
 .btn:hover {
   background: #06bbaf;
   text-decoration: none;
+}
+
+.transaction {
+  padding: 3px 11px 3px 11px;
+  /*margin-left: 38px;*/
+}
+
+.marginless {
+  padding: 0px;
+  margin: 0px;
 }
 
 
