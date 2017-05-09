@@ -1,3 +1,40 @@
+<div class='CenterAlignText'>
+<p>All Transactions </p>
+  <table>
+    <tr>
+      <th>Bank</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th></th>
+    </tr>
+
+  <% @transactions.each() do |transaction| %>
+  <tr> 
+    <td><%= transaction.bank_name %></td>
+    <td><%= transaction.transaction_date%></td>
+    <td><%= transaction.description%></td>
+    <td><%= transaction.type%></td>
+    <td><%= transaction.category_id%></td>
+    <td>£<%= sprintf('%.2f', transaction.amount) %></td>
+    <td class="cell-no-padding"><a href="/transactions/<%= transaction.id %>" class="btn">VIEW</a> </td>
+  </tr>
+    <% end %> 
+  <tr> 
+    <td><p></p> </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class='Bold RightTextAlign'>Total: </td>
+    <td class='Bold'>£<%= sprintf('%.2f', @total_amount) %></td>
+    <td></td>
+    </tr>
+  </table> 
+
+</div>
+
 <form action="/transactions" method="POST">
 
   <label for="bank-name-field">Select Bank:</label>
@@ -25,5 +62,4 @@
   <input type="submit" value="Add transaction">
 
 </form>
-
 

@@ -16,6 +16,8 @@ end
 # NEW - CREATE  
 get '/transactions/new' do
   @categories= Category.all()
+  @transactions = Transaction.all()
+  @total_amount = Transaction.total_amount()
   erb(:'transactions/new')
 end 
 

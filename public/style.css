@@ -24,7 +24,7 @@ p {
    
 }
 .cell-no-padding p {
-  margin: 0px 0;
+  margin: 2px 2px 2px 2px;
 }
 
 
@@ -92,15 +92,8 @@ td, th {
 
 .transaction {
   padding: 3px 11px 3px 11px;
-  /*margin-left: 38px;*/
+  margin-left: 38px;
 }
-
-.marginless {
-  padding: 0px;
-  margin: 0px;
-}
-
-
 
 
 

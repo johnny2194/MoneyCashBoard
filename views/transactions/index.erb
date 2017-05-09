@@ -17,13 +17,13 @@
     <td><%= transaction.transaction_date%></td>
     <td><%= transaction.description%></td>
     <td><%= transaction.type%></td>
-    <td><%= transaction.category_id%></td>
+    <td><%= transaction.category.name%></td>
     <td>£<%= sprintf('%.2f', transaction.amount) %></td>
-    <td><a href="/transactions/<%= transaction.id %>" class="btn">VIEW</a> </td>
+    <td class="cell-no-padding"><a href="/transactions/<%= transaction.id %>" class="btn">VIEW</a> </td>
   </tr>
     <% end %> 
   <tr> 
-    <td class="cell-no-padding"><p><a href="/transactions/new" class="btn transaction">ADD NEW TRANSACTION</a></p> </td>
+    <td><p></p> </td>
     <td></td>
     <td></td>
     <td></td>

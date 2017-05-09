@@ -42,6 +42,14 @@ class Transaction
       total_amount_hash = SqlRunner.run( sql )
       return total_amount_hash[0]['sum'].to_f
   end
+
+  def category()
+    sql = "SELECT * FROM categories 
+    WHERE id = #{@category_id}"
+    category = SqlRunner.run(sql)
+    result = Category.new( category.first )
+    return result
+  end
   
 
 end 
