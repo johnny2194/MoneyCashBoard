@@ -9,8 +9,7 @@ require_relative('../models/category.rb')
 
 get '/categories/:id' do 
   @category = Category.find(params[:id])
-  # @transactions @category.transactions
-  @transactions = Transaction.all()
-  @total_amount = Transaction.total_amount()
+  @transactions = @category.transactions()
+  @total_amount = 0
   erb(:'categories/show')
 end  
