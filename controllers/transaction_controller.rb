@@ -60,6 +60,13 @@ post '/transactions/:id' do
   redirect("/transactions/#{params[:id]}")
 end 
 
+# DELETE - DELETE 
+post '/transactions/:id/delete' do
+  @transaction = Transaction.find( params[:id])
+  @transaction.delete()
+  erb(:'transactions/delete')
+end
+
 
 
 
