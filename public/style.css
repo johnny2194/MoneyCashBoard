@@ -13,7 +13,9 @@ body {
 .header { 
   background-image: url("http://imgur.com/a/Ue7ws");
   padding: 0px 0px 0px 0px;
-  margin: 26px; 
+  margin-left: 30px; 
+  margin-top: 20px;
+  margin-bottom: 25px;
 } 
 
 p {
@@ -27,9 +29,13 @@ p {
   margin: 2px 2px 2px 2px;
 }
 
+h3 {
+  margin-left: 30px;
+}
+
 
 table { 
-  width: 98%; 
+  width: 97%; 
   border-collapse: collapse; 
   margin-left: auto;
   margin-right: auto;
@@ -57,7 +63,7 @@ td, th {
   }
 
 .Bold {
-  font-weight: bold; 
+  font-weight: bolder; 
 }
   
 .RightTextAlign {
@@ -78,13 +84,13 @@ td, th {
   -webkit-border-radius: 16;
   -moz-border-radius: 16;
   border-radius: 16px;
-  font-family: Arial;
   color: #fffcff;
   font-size: 12px;
   padding: 2px 11px 2px 11px;
   text-decoration: none;
   transition-duration: 0.2s;
   text-transform: uppercase;
+  max-width: 200px;
 }
 
 .btn:hover {
@@ -171,3 +177,34 @@ and (max-device-width : 480px) {
   }
 }
 
+input {
+  max-width: 100px;
+}
+
+.link {
+  color: #fffcff;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  }
+
+  .link:hover {
+    color: #fba100;
+    transition-duration: 0.4s;
+    }
+
+.icon {
+  display: inline;
+}
+
+
+
+#icon-mag {
+  font-size: 15px;
+}
+/*.mag {
+  background-image: url(mag.svg);
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
+
+}*/
