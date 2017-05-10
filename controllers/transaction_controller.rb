@@ -29,7 +29,7 @@ post '/transactions' do
   redirect '/transactions'
 end
 
-post '/transactions/filter' do
+post '/transactions/category_filter' do
   @categories= Category.all()
   @category = Category.find(params['category_id'])
   @transactions = @category.transactions()

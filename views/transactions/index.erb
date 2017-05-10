@@ -13,7 +13,7 @@
     </tr>
 
     <tr> 
-      <td><form action="/transactions/filter" method="POST">  
+      <td><form action="/transactions/bank_filter" method="POST">  
           <label for="category-select"></label>
           <select id="category-select" name="category_id">
               <option value="Select-Filter">Select your option</option>
@@ -27,7 +27,7 @@
       <td></td>
       <td>
       <td>
-        <form action="/transactions/filter" method="POST">  
+        <form action="/transactions/category_filter" method="POST">  
           <select id="category-select" name="category_id">
           <option value="Select-Filter">Select your option</option>
             <% for category in @categories do%>
