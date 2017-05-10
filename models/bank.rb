@@ -16,4 +16,10 @@ class Bank
     SqlRunner.run( sql )
   end
 
+  def save()
+    sql = "INSERT INTO banks VALUES ( name, logo_url ) VALUES ('#{ @name }','#{ @logo_url }') 
+    RETURNING *;"
+    categories_data = SqlRunner.run(sql)
+    @id = categories_data.first()['id'].to_i
+  end
 end 

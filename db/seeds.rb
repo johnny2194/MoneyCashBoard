@@ -1,9 +1,11 @@
 require('pry-byebug')
 require_relative('../models/transaction.rb')
 require_relative('../models/category.rb')
+require_relative('../models/bank.rb')
 
 Transaction.delete_all()
 Category.delete_all()
+Bank.delete_all()
 
 bank1 = Bank.new({
   "name" => "Tesco Bank",
