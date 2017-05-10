@@ -1,37 +1,42 @@
 <div class='CenterAlignText'>
-<p>All Transactions </p>
-  <table>
-    <tr>
-      <th>Bank</th>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Type</th>
-      <th>Category</th>
-      <th>Amount</th>
-      <th></th>
-    </tr>
+<h3>All Transactions </h3>
+<table>
 
-  <% @transactions.each() do |transaction| %>
-  <tr> 
-    <td><%= transaction.bank.name %></td>
-    <td><%= transaction.transaction_date%></td>
-    <td><%= transaction.description%></td>
-    <td><%= transaction.type%></td>
-    <td><%= transaction.category.name%></td>
-    <td>£<%= sprintf('%.2f', transaction.amount) %></td>
-    <td class="cell-no-padding"><a href="/transactions/<%= transaction.id %>" class="btn">VIEW</a> </td>
+  <tr>
+    <th><a class="link" href="/banks">Bank <div class="icon"><i id="icon-mag" class="im im-magnifier"></i></div></th>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th><a class="link" href="/categories">Category <div class="icon"><i id="icon-mag" class="im im-magnifier"></i></div></th>
+    <th>Amount</th>
+    <th></th>
   </tr>
-    <% end %> 
-  <tr> 
-    <td><p></p> </td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td class='Bold RightTextAlign'>Total: </td>
-    <td class='Bold'>£<%= sprintf('%.2f', @total_amount) %></td>
-    <td></td>
-    </tr>
-  </table>
+
+<% @transactions.each() do |transaction| %>
+<tr> 
+  <td>
+    <form action="/transactions/bank_filter" method="POST">
+      <input name="bank_id" value="<%=transaction.bank.id%>" type="image" src="<%= transaction.bank.logo_url %>"" alt="transaction.bank.name">
+    </form>
+  </td>
+  <td><%= transaction.transaction_date%></td>
+  <td><%= transaction.description%></td>
+  <td><%= transaction.type%></td>
+  <td><%= transaction.category.name%></td>
+  <td>£<%= sprintf('%.2f', transaction.amount) %></td>
+  <td class="cell-no-padding"><a href="/transactions/<%= transaction.id %>" class="btn">Details</a> </td>
+</tr>
+  <% end %> 
+<tr> 
+  <td><p></p> </td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class='Bold RightTextAlign bigger-font'>Total: </td>
+  <td class='Bold bigger-font'>£<%= sprintf('%.2f', @total_amount) %></td>
+  <td></td>
+  </tr>
+</table>
   <p></p>
 </div>
 
@@ -92,6 +97,7 @@
 
       </tr>
       </table>
+      <p><a href="/categories/new" class="btn category ">CREATE CATEGORY</a></p>
 
 
 </form>

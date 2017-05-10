@@ -32,6 +32,7 @@ post '/transactions' do
 end
 
 post '/transactions/category_filter' do
+  @banks= Bank.all()
   @categories= Category.all()
   @category = Category.find(params['category_id'])
   @transactions = @category.transactions()
