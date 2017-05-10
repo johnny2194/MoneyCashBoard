@@ -1,4 +1,6 @@
+require('pry-byebug')
 require_relative('../db/sql_runner')
+require_relative('bank')
 
 class Transaction
 
@@ -16,7 +18,7 @@ class Transaction
   end
 
   def save()
-    sql = "INSERT INTO transactions (bank_name, transaction_date, description, type, category_id, amount) VALUES (#{ @bank_id },'#{ @transaction_date }', '#{ @description }', '#{ @type }', #{ @category_id }, #{ @amount }) 
+    sql = "INSERT INTO transactions (bank_id, transaction_date, description, type, category_id, amount) VALUES (#{ @bank_id },'#{ @transaction_date }', '#{ @description }', '#{ @type }', #{ @category_id }, #{ @amount }) 
     RETURNING *;"
     transaction_data = SqlRunner.run(sql)
     @id = transaction_data.first()['id'].to_i
@@ -55,10 +57,10 @@ class Transaction
     sql = "SELECT * FROM banks 
     WHERE id = #{@bank_id}"
     bank = SqlRunner.run(sql)
-    result = Category.new( bank.first )
+    result = Bank.new( bank.first )
     return result
   end
-  
+
   def update()
     sql = "UPDATE transactions SET
   bank_name = '#{ @bank_id }',

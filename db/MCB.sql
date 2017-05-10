@@ -15,7 +15,7 @@ CREATE TABLE categories (
 
 CREATE TABLE transactions (
   id SERIAL4 PRIMARY KEY,
-  bank_name VARCHAR(255),
+  bank_id INT4 REFERENCES banks(id) ON DELETE CASCADE,
   transaction_date DATE,
   description VARCHAR(255),
   type VARCHAR(255),

@@ -69,7 +69,7 @@ category9.save
 
 
 transaction1 = Transaction.new({
-  "bank_name" => "Tesco Bank",
+  "bank_id" => bank1.id,
   "transaction_date" => "05-MAY-17",
   "description" => "Waitrose",
   "type" => "Personal",
@@ -78,7 +78,7 @@ transaction1 = Transaction.new({
 })
 
 transaction2 = Transaction.new({
-  "bank_name" => "Tesco Bank",
+  "bank_id" => bank2.id,
   "transaction_date" => "06-MAY-17",
   "description" => "Cineworld",
   "type" => "Personal",
@@ -87,7 +87,7 @@ transaction2 = Transaction.new({
 })
 
 transaction3 = Transaction.new({
-  "bank_name" => "RBS",
+  "bank_id" => bank3.id,
   "transaction_date" => "06-MAY-17",
   "description" => "Ethereum",
   "type" => "Personal",
@@ -96,7 +96,7 @@ transaction3 = Transaction.new({
 })
 
 transaction4 = Transaction.new({
-  "bank_name" => "Barclays",
+  "bank_id" => bank4.id,
   "transaction_date" => "07-MAY-17",
   "description" => "Caffiene Drip",
   "type" => "Personal",

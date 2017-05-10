@@ -19,8 +19,8 @@ class Bank
   def save()
     sql = "INSERT INTO banks ( name, logo_url ) VALUES ('#{ @name }','#{ @logo_url }') 
     RETURNING *;"
-    categories_data = SqlRunner.run(sql)
-    @id = categories_data.first()['id'].to_i
+    banks_data = SqlRunner.run(sql)
+    @id = banks_data.first()['id'].to_i
   end
 
   def Bank.find( id )

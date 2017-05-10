@@ -3,7 +3,7 @@ require('sinatra/contrib/all')
 require('pry-byebug')
 require_relative('../models/transaction.rb')
 require_relative('../models/category.rb')
-
+require_relative('../models/bank.rb')
 
 
 # INDEX - READ  
@@ -11,12 +11,14 @@ get '/transactions' do
   @transactions = Transaction.all()
   @total_amount = Transaction.total_amount()
   @categories= Category.all()
+  @banks= Bank.all()
   erb(:'transactions/index')
 end 
 
 # NEW - CREATE  
 get '/transactions/new' do
   @categories= Category.all()
+  @banks= Bank.all()
   @transactions = Transaction.all()
   @total_amount = Transaction.total_amount()
   erb(:'transactions/new')
@@ -56,6 +58,7 @@ end
 get '/transactions/:id/edit' do 
   @transaction = Transaction.find(params[:id])
   @categories = Category.all()
+  @banks= Bank.all()
   erb(:'transactions/edit')
 end 
 
