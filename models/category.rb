@@ -55,5 +55,16 @@ class Category
     SqlRunner.run( sql )
   end
 
+  def update()
+    sql = "UPDATE categories SET
+     name = '#{ @name }'
+      WHERE id = '#{ @id }';"
+    SqlRunner.run( sql )
+  end
+
+  def delete()
+    sql = "DELETE FROM categories WHERE id=#{ @id };"
+    SqlRunner.run( sql )
+  end
 end
 
