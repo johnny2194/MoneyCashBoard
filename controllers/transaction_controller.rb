@@ -41,6 +41,7 @@ post '/transactions/bank_filter' do
   @banks= Bank.all()
   @bank = Bank.find(params['bank_id'])
   @transactions = @bank.transactions()
+  @total_amount = @bank.total_sum_by_bank()
   erb(:'bank/show')
 end 
 #  SHOW - READ

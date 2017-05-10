@@ -48,4 +48,11 @@ class Bank
     end
     return transaction_objects
   end
+
+  def total_sum_by_bank()
+    sql = "SELECT SUM (amount) FROM banks
+    WHERE bank_id = #{@id};"
+    total_amount_hash = SqlRunner.run( sql )
+    return total_amount_hash[0]['sum'].to_f
+  end 
 end 
