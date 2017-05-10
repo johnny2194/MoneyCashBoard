@@ -43,7 +43,7 @@
 
   <% @transactions.each() do |transaction| %>
   <tr> 
-    <td><%= transaction.bank.name %></td>
+    <td><img src="<%= transaction.bank.logo_url %>" alt="transaction.bank.name" /></td>
     <td><%= transaction.transaction_date%></td>
     <td><%= transaction.description%></td>
     <td><%= transaction.type%></td>
