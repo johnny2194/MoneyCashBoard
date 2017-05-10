@@ -18,7 +18,7 @@ class Transaction
   end
 
   def save()
-    sql = "INSERT INTO transactions (bank_id, transaction_date, description, type, category_id, amount) VALUES (#{ @bank_id },'#{ @transaction_date }', '#{ @description }', '#{ @type }', #{ @category_id }, #{ @amount }) 
+    sql = "INSERT INTO transactions (bank_id  , transaction_date, description, type, category_id, amount) VALUES (#{ @bank_id },'#{ @transaction_date }', '#{ @description }', '#{ @type }', #{ @category_id }, #{ @amount }) 
     RETURNING *;"
     transaction_data = SqlRunner.run(sql)
     @id = transaction_data.first()['id'].to_i

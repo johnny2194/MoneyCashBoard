@@ -50,8 +50,12 @@
     </tr>
     <tr>
       <td>
-        <label for="bank-name-field"></label>
-        <input id="bank-name-field" type="text" name="bank_name"/>
+        <label for="bank-select"></label>
+        <select id="bank-select" name="bank_id">
+          <% for bank in @banks do%>
+          <option value="<%=bank.id%>" ><%=bank.name%></option>                  
+       <%end%>
+        </select>
       </td>
 
       <td>
