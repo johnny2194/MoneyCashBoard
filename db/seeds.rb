@@ -2,6 +2,10 @@ require('pry-byebug')
 require_relative('../models/transaction.rb')
 require_relative('../models/category.rb')
 
+Transaction.delete_all()
+Category.delete_all()
+
+
 category1 = Category.new({
   "name" => "Housing"
   })

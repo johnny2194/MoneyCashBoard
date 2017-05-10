@@ -67,4 +67,9 @@ class Transaction
     sql = "DELETE FROM transactions WHERE id=#{ @id };"
     SqlRunner.run( sql )
   end
+
+  def self.delete_all
+    sql = "DELETE FROM transactions"
+    SqlRunner.run( sql )
+  end
 end 

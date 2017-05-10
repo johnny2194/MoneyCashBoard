@@ -50,5 +50,10 @@ class Category
     return total_amount_hash[0]['sum'].to_f
   end 
 
+  def self.delete_all
+    sql = "DELETE FROM categories"
+    SqlRunner.run( sql )
+  end
+
 end
 

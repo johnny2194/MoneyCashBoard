@@ -1,6 +1,12 @@
 DROP TABLE transactions;
 DROP TABLE categories;
+DROP TABLE banks;
 
+CREATE TABLE banks (
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255),
+  logo_url VARCHAR(512)
+);
 
 CREATE TABLE categories (
   id SERIAL4 PRIMARY KEY,
