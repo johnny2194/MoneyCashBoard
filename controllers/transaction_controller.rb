@@ -35,8 +35,14 @@ post '/transactions/category_filter' do
   @transactions = @category.transactions()
   @total_amount = @category.total_sum_by_category()
   erb(:'categories/show')
-end 
+end
 
+post '/transactions/bank_filter' do
+  @banks= Bank.all()
+  @bank = Bank.find(params['bank_id'])
+  @transactions = @bank.transactions()
+  erb(:'bank/show')
+end 
 #  SHOW - READ
 
 get '/transactions/:id' do 
