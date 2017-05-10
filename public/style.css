@@ -1,7 +1,7 @@
 html { 
   margin: 0px; 
   padding: 0px;
-  background-color: #EFFBFB;
+  background-color: /*#B6a19e*/ #EFFBFB;
   /*background-image: <img src=""/>;*/
 }
 
@@ -199,6 +199,10 @@ input {
 
 
 #icon-mag {
+  font-size: 15px;
+}
+
+.bigger-font {
   font-size: 15px;
 }
 /*.mag {

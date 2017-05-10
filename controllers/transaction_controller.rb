@@ -51,6 +51,9 @@ end
 
 get '/transactions/:id' do 
   @transaction = Transaction.find(params[:id])
+  @total_amount = Transaction.total_amount()
+  @categories= Category.all()
+  @banks= Bank.all()
   erb(:'transactions/show')
 end  
 

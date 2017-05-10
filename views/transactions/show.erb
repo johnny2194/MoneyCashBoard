@@ -1,15 +1,29 @@
 <p>Transaction Details:</p>
+<table>
 
-<p>Bank:  <%= @transaction.bank.name %></p>
-<p>Date: <%= @transaction.transaction_date%></p>
-<p>Description: <%= @transaction.description%></p>
-<p>Type: <%= @transaction.type%></p>
-<p>Category: <%= @transaction.category.name%></p>
-<p>Amount: <%= @transaction.amount %></p>
-<hr/>
-
+  <tr>
+    <th><a class="link" href="/banks">Bank <div class="icon"><i id="icon-mag" class="im im-magnifier"></i></div></th>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th><a class="link" href="/categories">Category <div class="icon"><i id="icon-mag" class="im im-magnifier"></i></div></th>
+    <th>Amount</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><%= @transaction.bank.name %></td>
+    <td><%= @transaction.transaction_date%></td>
+    <td><%= @transaction.description%></td>
+    <td><%= @transaction.type%></td>
+    <td><%= @transaction.category.name%></td>
+    <td>£<%= @transaction.amount %></td>
+    <td><a href="/transactions/<%= @transaction.id %>/edit" class="btn slim-cell">UPDATE</a></td>
+  </tr>
+</table>
+<p>
 <form action="/transactions/<%= @transaction.id %>/delete" method="post">
  <a href="/transactions/<%= @transaction.id %>/edit"></a>
    <input class="btn transaction" type="submit" value="DELETE TRANSACTION">
   </form>
-  <a href="/transactions/<%= @transaction.id %>/edit" class="btn transaction">UPDATE</a>
+  </p>
+  
