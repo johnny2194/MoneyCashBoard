@@ -33,6 +33,9 @@ h3 {
   margin-left: 30px;
 }
 
+.margin-left {
+  margin-left: 30px;
+}
 
 table { 
   width: 97%; 
@@ -212,3 +215,29 @@ input {
   height: 15px;
 
 }*/
+
+.slim-table {
+  width: 20%; 
+}
+
+
+.table-override {
+
+    width: 20%; 
+    border-collapse: collapse; 
+    margin-left: auto;
+    margin-right: auto;
+    
+    background: none; 
+   
+
+  
+    font-weight: bold; 
+  }
+    
+  .over-ride { 
+      padding: 8px; 
+      border: none; 
+      text-align: center; 
+    }
+}

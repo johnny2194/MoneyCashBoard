@@ -1,9 +1,20 @@
-<div class='CenterAlignText'>
-<p>All Categories</p>
+<div>
+<h3>All Categories</h3>
  
-  <% @categories.each() do |category| %>
-    <p>Cat: <%= category.name %></p>
-  <% end %>
-  <hr/>
+  
 </div>
+
+<table class="slim-table table-override">
+<tr>
+  <th class="over-ride">Category</th>
+  <th class="over-ride"></th>
+  <th class="over-ride"></th>  
+  <% @categories.each() do |category| %>
+<tr> 
+  <td class="over-ride"><p class="margin-left"><%= category.name %></p></td>
+  <td class="over-ride"><a href="/categories/<%= category.id %>/edit" class="btn slim-cell">UPDATE</a></td>
+  <td class="over-ride"></td>
+</tr>
+<% end %>
+</table>
 
