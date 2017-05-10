@@ -2,65 +2,65 @@
 <p><%= @bank.name %></p>
       <table>
 
-        <tr>
-          <th>Bank</th>
-          <th>Date</th>
-          <th>Description</th>
-          <th>Type</th>
-          <th><a href="http://localhost:4567/categories">Category</th>
-          <th>Amount</th>
-          <th></th>
-        </tr>
-
-        <tr> 
-          <td><form action="/transactions/bank_filter" method="POST">  
-              <label for="category-select"></label>
-              <select id="category-select" name="category_id">
-                  <option value="Select-Filter">Select your option</option>
-                <% for category in @categories do%>
-                <option value="<%=category.id%>" ><%=category.name%></option> 
-                <%end%>
-              </select>
-              <input class="btn" type="submit" value="GO">
-            </form></td>
-          <td></td>
-          <td></td>
-          <td>
-          <td>
-            <form action="/transactions/category_filter" method="POST">  
-              <select id="category-select" name="category_id">
-              <option value="Select-Filter">Select your option</option>
-                <% for category in @categories do%>
-                <option value="<%=category.id%>" ><%=category.name%></option> 
-                <%end%>
-              </select>
-              <input class="btn" type="submit" value="GO">
-            </form>
-          </td>
-          <td></td>
-          <td></td>
+          <tr>
+            <th>Bank</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th><a href="http://localhost:4567/categories">Category</th>
+            <th>Amount</th>
+            <th></th>
           </tr>
 
-      <% @transactions.each() do |transaction| %>
-      <tr> 
-        <td><%= transaction.bank_name %></td>
-        <td><%= transaction.transaction_date%></td>
-        <td><%= transaction.description%></td>
-        <td><%= transaction.type%></td>
-        <td><%= transaction.category.name%></td>
-        <td>£<%= sprintf('%.2f', transaction.amount) %></td>
-        <td class="cell-no-padding"><a href="/transactions/<%= transaction.id %>" class="btn">Details</a> </td>
-      </tr>
-        <% end %> 
-      <tr> 
-        <td><p></p> </td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class='Bold RightTextAlign'>Total: </td>
-        <td class='Bold'>£<%= sprintf('%.2f', @total_amount) %></td>
-        <td></td>
+          <tr> 
+            <td><form action="/transactions/bank_filter" method="POST">  
+                <label for="bank-select"></label>
+                <select id="bank-select" name="bank_id">
+                    <option value="Select-Filter">Select your option</option>
+                  <% for bank in @banks do%>
+                  <option value="<%=bank.id%>" ><%=bank.name%></option> 
+                  <%end%>
+                </select>
+                <input class="btn" type="submit" value="GO">
+              </form></td>
+            <td></td>
+            <td></td>
+            <td>
+            <td>
+              <form action="/transactions/category_filter" method="POST">  
+                <select id="category-select" name="category_id">
+                <option value="Select-Filter">Select your option</option>
+                  <% for category in @categories do%>
+                  <option value="<%=category.id%>" ><%=category.name%></option> 
+                  <%end%>
+                </select>
+                <input class="btn" type="submit" value="GO">
+              </form>
+            </td>
+            <td></td>
+            <td></td>
+            </tr>
+
+        <% @transactions.each() do |transaction| %>
+        <tr> 
+          <td><%= transaction.bank.name %></td>
+          <td><%= transaction.transaction_date%></td>
+          <td><%= transaction.description%></td>
+          <td><%= transaction.type%></td>
+          <td><%= transaction.category.name%></td>
+          <td>£<%= sprintf('%.2f', transaction.amount) %></td>
+          <td class="cell-no-padding"><a href="/transactions/<%= transaction.id %>" class="btn">Details</a> </td>
         </tr>
-      </table>
-      <p><a href="/transactions/new" class="btn transaction">ADD NEW TRANSACTION</a></p> 
-    </div>
+          <% end %> 
+        <tr> 
+          <td><p></p> </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class='Bold RightTextAlign'>Total: </td>
+          <td class='Bold'>£<%= sprintf('%.2f', @total_amount) %></td>
+          <td></td>
+          </tr>
+        </table>
+        <p><a href="/transactions/new" class="btn transaction">ADD NEW TRANSACTION</a></p> 
+      </div>
