@@ -14,7 +14,9 @@
 
     <tr> 
       <td><form action="/transactions/filter" method="POST">  
+          <label for="category-select"></label>
           <select id="category-select" name="category_id">
+              <option value="Select-Filter">Select your option</option>
             <% for category in @categories do%>
             <option value="<%=category.id%>" ><%=category.name%></option> 
             <%end%>
@@ -23,17 +25,11 @@
         </form></td>
       <td></td>
       <td></td>
-      <td><form action="/transactions/filter" method="POST">  
-          <select id="category-select" name="category_id">
-            <% for category in @categories do%>
-            <option value="<%=category.id%>" ><%=category.name%></option> 
-            <%end%>
-          </select>
-          <input class="btn" type="submit" value="GO">
-        </form></td>
+      <td>
       <td>
         <form action="/transactions/filter" method="POST">  
           <select id="category-select" name="category_id">
+          <option value="Select-Filter">Select your option</option>
             <% for category in @categories do%>
             <option value="<%=category.id%>" ><%=category.name%></option> 
             <%end%>
@@ -53,7 +49,7 @@
     <td><%= transaction.type%></td>
     <td><%= transaction.category.name%></td>
     <td>£<%= sprintf('%.2f', transaction.amount) %></td>
-    <td class="cell-no-padding"><a href="/transactions/<%= transaction.id %>" class="btn">VIEW</a> </td>
+    <td class="cell-no-padding"><a href="/transactions/<%= transaction.id %>" class="btn">Details</a> </td>
   </tr>
     <% end %> 
   <tr> 
