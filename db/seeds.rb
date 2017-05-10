@@ -5,6 +5,26 @@ require_relative('../models/category.rb')
 Transaction.delete_all()
 Category.delete_all()
 
+bank1 = Bank.new({
+  "name" => "Tesco Bank",
+  "logo_url" => "/Tesco_bank.png"  
+  })
+bank2 = Bank.new({
+  "name" => "Barclays",
+  "logo_url" => "/barclays.svg.png"
+  })
+bank3 = Bank.new({
+  "name" => "TSB",
+  "logo_url" => "/TSB.svg.png"
+  })
+bank4 = Bank.new({
+  "name" => "Santander",
+  "logo_url" => "Santander.png"
+  })
+bank1.save
+bank2.save
+bank3.save
+bank4.save
 
 category1 = Category.new({
   "name" => "Housing"
