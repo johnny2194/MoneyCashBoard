@@ -21,6 +21,7 @@ bank4 = Bank.new({
   "name" => "Santander",
   "logo_url" => "Santander.png"
   })
+
 bank1.save
 bank2.save
 bank3.save

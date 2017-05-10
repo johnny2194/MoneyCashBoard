@@ -11,4 +11,9 @@ class Bank
     @logo_url = options['logo_url']
   end
 
+  def self.delete_all
+    sql = "DELETE FROM banks"
+    SqlRunner.run( sql )
+  end
+
 end 
