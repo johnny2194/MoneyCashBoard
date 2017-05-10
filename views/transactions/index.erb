@@ -43,7 +43,11 @@
 
   <% @transactions.each() do |transaction| %>
   <tr> 
-    <td><img src="<%= transaction.bank.logo_url %>" alt="transaction.bank.name" /></td>
+    <td>
+      <form action="/transactions/bank_filter" method="POST">
+        <input name="bank_id" value="<%=transaction.bank.id%>" type="image" src="<%= transaction.bank.logo_url %>"" alt="transaction.bank.name">
+      </form>
+    </td>
     <td><%= transaction.transaction_date%></td>
     <td><%= transaction.description%></td>
     <td><%= transaction.type%></td>
