@@ -2,12 +2,12 @@ require_relative('../db/sql_runner')
 
 class Transaction
 
-  attr_reader :id, :category_id
-  attr_accessor :bank_name, :transaction_date, :description, :type,  :amount
+  attr_reader :id, :category_id, :bank_id
+  attr_accessor :transaction_date, :description, :type,  :amount
 
   def initialize( options )
     @id = options['id'].to_i
-    @bank_name = options['bank_name']
+    @bank_id = options['bank_id'].to_i
     @transaction_date = options['transaction_date']
     @description = options['description']
     @type = options['type']
@@ -16,7 +16,7 @@ class Transaction
   end
 
   def save()
-    sql = "INSERT INTO transactions (bank_name, transaction_date, description, type, category_id, amount) VALUES ('#{ @bank_name }','#{ @transaction_date }', '#{ @description }', '#{ @type }', #{ @category_id }, #{ @amount }) 
+    sql = "INSERT INTO transactions (bank_name, transaction_date, description, type, category_id, amount) VALUES (#{ @bank_id },'#{ @transaction_date }', '#{ @description }', '#{ @type }', #{ @category_id }, #{ @amount }) 
     RETURNING *;"
     transaction_data = SqlRunner.run(sql)
     @id = transaction_data.first()['id'].to_i
@@ -50,10 +50,18 @@ class Transaction
     result = Category.new( category.first )
     return result
   end
+
+  def bank()
+    sql = "SELECT * FROM banks 
+    WHERE id = #{@bank_id}"
+    bank = SqlRunner.run(sql)
+    result = Category.new( bank.first )
+    return result
+  end
   
   def update()
     sql = "UPDATE transactions SET
-  bank_name = '#{ @bank_name }',
+  bank_name = '#{ @bank_id }',
   transaction_date = '#{@transaction_date}',
   description = '#{@description}',
   type = '#{@type}',
